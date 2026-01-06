@@ -55,7 +55,6 @@ Models are compared using appropriate evaluation metrics, with attention paid to
 - pandas, NumPy  
 - scikit-learn  
 - matplotlib / seaborn  
-- Jupyter Notebook  
 
 All tools were selected for their reliability, transparency, and widespread adoption in healthcare data science.
 
@@ -76,5 +75,3 @@ All tools were selected for their reliability, transparency, and widespread adop
 ---
 ## Author
 **David Arubuike**  
-BSc Software Engineering  
-Healthcare Data Science Project
