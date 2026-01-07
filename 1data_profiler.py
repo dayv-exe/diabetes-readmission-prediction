@@ -10,7 +10,7 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
-os.makedirs('output', exist_ok=True)
+os.makedirs('output/data_profile', exist_ok=True)
 
 print("Loading dataset...")
 df = pd.read_csv('./dataset/diabetic_data.csv')
@@ -63,8 +63,7 @@ print(outlier_df.to_string(index=False))
 print("\n" + "="*60)
 print("CLASS BALANCE")
 print("="*60)
-df['readmitted_binary'] = df['readmitted'].apply(lambda x: 'NO' if x == 'NO' else 'YES')
-readmit = df['readmitted_binary'].value_counts()
+readmit = df['readmitted'].value_counts()
 print(f"\nReadmission Distribution:\n{readmit}")
 print(f"\nPercentages:\n{(readmit/len(df)*100).round(2)}")
 
@@ -85,9 +84,9 @@ ax.axvline(20, color='orange', linestyle='--', alpha=0.7, label='20%')
 ax.legend()
 ax.grid(True, alpha=0.3)
 plt.tight_layout()
-plt.savefig('output/missing_data_bar.png', dpi=300, bbox_inches='tight')
+plt.savefig('output/data_profile/missing_data_bar.png', dpi=300, bbox_inches='tight')
 plt.close()
-print("Saved: output/missing_data_bar.png")
+print("Saved: output/data_profile/missing_data_bar.png")
 
 # 2. Missing Data Heatmap
 fig, ax = plt.subplots(figsize=(12, 6))
@@ -98,9 +97,9 @@ ax.set_title('Missing Data Pattern (Sample)', fontweight='bold', fontsize=14)
 ax.set_xlabel('Patient Records', fontweight='bold', fontsize=12)
 ax.set_ylabel('Features', fontweight='bold', fontsize=12)
 plt.tight_layout()
-plt.savefig('output/missing_data_heatmap.png', dpi=300, bbox_inches='tight')
+plt.savefig('output/data_profile/missing_data_heatmap.png', dpi=300, bbox_inches='tight')
 plt.close()
-print("Saved: output/missing_data_heatmap.png")
+print("Saved: output/data_profile/missing_data_heatmap.png")
 
 # 3. Duplicate Analysis
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -116,9 +115,9 @@ for bar in bars:
     ax.text(bar.get_x()+bar.get_width()/2., h, f'{int(h):,}',
             ha='center', va='bottom', fontweight='bold', fontsize=11)
 plt.tight_layout()
-plt.savefig('output/duplicates.png', dpi=300, bbox_inches='tight')
+plt.savefig('output/data_profile/duplicates.png', dpi=300, bbox_inches='tight')
 plt.close()
-print("Saved: output/duplicates.png")
+print("Saved: output/data_profile/duplicates.png")
 
 # 4. Outlier Detection
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -131,9 +130,9 @@ ax.axvline(5, color='orange', linestyle='--', alpha=0.7, label='5%')
 ax.legend()
 ax.grid(True, alpha=0.3)
 plt.tight_layout()
-plt.savefig('output/outliers.png', dpi=300, bbox_inches='tight')
+plt.savefig('output/data_profile/outliers.png', dpi=300, bbox_inches='tight')
 plt.close()
-print("Saved: output/outliers.png")
+print("Saved: output/data_profile/outliers.png")
 
 # 5. Class Balance
 fig, ax = plt.subplots(figsize=(8, 6))
@@ -148,9 +147,9 @@ for bar in bars:
     ax.text(bar.get_x()+bar.get_width()/2., h, f'{int(h):,}\n({pct:.1f}%)',
             ha='center', va='bottom', fontweight='bold')
 plt.tight_layout()
-plt.savefig('output/class_balance.png', dpi=300, bbox_inches='tight')
+plt.savefig('output/data_profile/class_balance.png', dpi=300, bbox_inches='tight')
 plt.close()
-print("Saved: output/class_balance.png")
+print("Saved: output/data_profile/class_balance.png")
 
 print("\n" + "="*60)
 print("COMPLETE!")
