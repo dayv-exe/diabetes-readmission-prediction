@@ -29,7 +29,9 @@ print("Creating output directory structure...")
 
 # Create output directories relative to current working directory
 output_base = './output'
+dataset_base = './dataset'
 cleaned_data_dir = os.path.join(output_base, 'cleaned_data')
+cleaned_dataset_dir = os.path.join(dataset_base)
 
 # Create directories if they don't exist
 os.makedirs(output_base, exist_ok=True)
@@ -454,7 +456,7 @@ print("\n" + "="*80)
 print("STEP 12: SAVING CLEANED DATASET")
 print("="*80)
 
-cleaned_csv_path = os.path.join(cleaned_data_dir, 'diabetic_data_cleaned.csv')
+cleaned_csv_path = os.path.join(cleaned_dataset_dir, 'diabetic_data_cleaned.csv')
 df.to_csv(cleaned_csv_path, index=False)
 print(f"Saved: {cleaned_csv_path}")
 
