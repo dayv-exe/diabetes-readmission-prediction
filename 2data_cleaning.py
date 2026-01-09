@@ -226,12 +226,12 @@ print(f"  Reduced from {df['medical_specialty'].nunique()} to {df['medical_speci
 df = df.drop(columns=['medical_specialty'])
 df = df.rename(columns={'medical_specialty_cleaned': 'medical_specialty'})
 
-# Payer code - similar treatment
+# Payer code - drop due to high missing values and low predictive value
 print("\nHandling 'payer_code'...")
 payer_missing = df['payer_code'].isnull().sum()
 print(f"  Missing values: {payer_missing:,} ({payer_missing/len(df)*100:.2f}%)")
-df['payer_code'] = df['payer_code'].fillna('Unknown')
-print(f"  Replaced missing with 'Unknown'")
+df = df.drop(columns=['payer_code'])
+print(f"  Dropped 'payer_code' column")
 
 # ============================================================================
 # STEP 6: DATA CLEANING - LOW MISSING CLINICAL FIELDS
