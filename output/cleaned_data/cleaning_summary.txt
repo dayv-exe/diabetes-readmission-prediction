@@ -1,0 +1,18 @@
+
+DATA CLEANING SUMMARY
+================================================================================
+
+Original Dataset: 101,766 records × 50 features
+Cleaned Dataset: 101,763 records × 30 features
+
+Key Improvements:
+- Missing data reduced from 7.35% to 0.00%
+- Features reduced by 20 (38% reduction)
+- Records retained: 100.00%
+
+Target Variable:
+- readmitted_binary: 1 = readmission (<30 or >30 days), 0 = no early readmission
+- Class 0: 54,861 (53.9%)
+- Class 1: 46,902 (46.1%)
+
+All files saved to: /Users/davidarubuike/Desktop/Solent Uni/Data Science/diabetes-readmission-prediction/output/cleaned_data

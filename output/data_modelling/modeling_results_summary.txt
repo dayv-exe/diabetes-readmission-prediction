@@ -1,0 +1,35 @@
+================================================================================
+HOSPITAL READMISSION PREDICTION - MODELING RESULTS SUMMARY
+================================================================================
+
+DATASET INFORMATION:
+Total samples: 101763
+Training samples: 81410
+Test samples: 20353
+Readmission rate: 46.09%
+
+SELECTED FEATURES:
+  - number_inpatient
+  - number_emergency
+  - number_diagnoses
+  - time_in_hospital
+  - num_medications
+  - num_lab_procedures
+  - age_numeric
+  - diag_1_category
+
+MODEL COMPARISON:
+              Model  Accuracy  Precision   Recall  F1-Score  ROC-AUC
+Logistic Regression  0.616322   0.606389 0.477561  0.534319 0.650425
+      Random Forest  0.622464   0.612013 0.494190  0.546827 0.662261
+            XGBoost  0.622365   0.597762 0.552393  0.574183 0.663543
+
+RECOMMENDED MODEL: XGBoost
+Best Recall Score: 0.5524
+
+TOP 5 PREDICTIVE FEATURES:
+  number_inpatient: 0.3960
+  number_emergency: 0.1191
+  number_diagnoses: 0.0689
+  diag_1_category_Neoplasms: 0.0655
+  diag_1_category_Diabetes: 0.0458

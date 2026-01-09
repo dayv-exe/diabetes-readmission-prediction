@@ -1,0 +1,12 @@
+Metric,Value
+Original Records,"101,766"
+Final Records,"101,763"
+Records Removed,3
+Record Retention Rate (%),100.00
+Original Features,50
+Final Features,30
+Features Removed,20
+Feature Reduction (%),40.00
+Missing Data Before (%),7.35
+Missing Data After (%),0.00
+Data Quality Improvement (%),7.35
