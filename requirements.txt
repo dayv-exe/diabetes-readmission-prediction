@@ -1,3 +1,6 @@
+xgboost
+scipy
+seaborn
 scikit-learn
 pandas
 matplotlib
